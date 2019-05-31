@@ -6,6 +6,13 @@ var cinemaHall1 = {
   cinemaHallMap = '',
   cinemaHallCurrentRow = 1;
 
+var orders = {
+      date:     [],
+      session:  [],
+      rows:     [],
+      seat:     []
+};
+
 $.each(cinemaHall1.row, function(row, numberOfSeats) {
   cinemaHallRow = '';
   for (i = 1; i <= numberOfSeats; i++) {
@@ -32,9 +39,8 @@ function showBaySeat() {
   result = '';
   //ищем все места купленные и показываем список выкупленных мест
   $.each($('.seat.bay'), function(key, item) {
-    result += '<div class="ticket">Ряд: ' +
-      $(item).data().row + ' Место:' +
-      $(item).data().seat + '</div>';
+    result += '<div class="ticket" data-row="'+$(item).data().row +'" data-seat="'+$(item).data().seat+
+    '>Ряд: ' +  $(item).data().row + ' Место:' + $(item).data().seat + '</div>';
   });
 
   $('.result').html(result);
