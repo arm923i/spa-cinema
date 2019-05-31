@@ -35,6 +35,13 @@ $('.seat').on('click', function(e) {
   showBaySeat();
 });
 
+$('#sbmt').on('click', function(e) {
+  $.each( $('.ticket'), function(orders, ord) {
+    console.log( $(ord).data().crow );
+  });
+
+});
+
 function showBaySeat() {
   result = '';
   //ищем все места купленные и показываем список выкупленных мест
