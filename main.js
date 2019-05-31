@@ -39,8 +39,7 @@ function showBaySeat() {
   result = '';
   //ищем все места купленные и показываем список выкупленных мест
   $.each($('.seat.bay'), function(key, item) {
-    result += '<div class="ticket" data-row="'+$(item).data().row +'" data-seat="'+$(item).data().seat+
-    '>Ряд: ' +  $(item).data().row + ' Место:' + $(item).data().seat + '</div>';
+    result += '<div class="ticket" data-crow="' + $(item).data().row  + '" data-cseat="' + $(item).data().seat + '" >Ряд: ' +  $(item).data().row + ' Место:' + $(item).data().seat + '</div>';
   });
 
   $('.result').html(result);
