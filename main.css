@@ -28,9 +28,12 @@ body{
 .result {
   font-size: 16px;
   display: inline-block;
-  max-height: 300px;
-  overflow-y: auto;
+  
   margin-right: 5px;
+}
+.res {
+  max-height: 200px;
+  overflow-y: auto;
 }
 .date, .hall, .res{
   border-radius: 20px;
