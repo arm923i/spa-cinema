@@ -36,14 +36,6 @@ $('.seat').on('click', function(e) {
   }
 });
 
-function showBaySeat() {
-  result = '';
-  $.each($('.seat.bay'), function(key, item) {
-    result += '<div class="ticket" data-crow="' + $(item).data().row  + '" data-cseat="' + $(item).data().seat + '" >Ряд: ' +  $(item).data().row + ' Место:' + $(item).data().seat + '</div>';
-  });
-  $('.result').html(result);
-}
-
 $('#sbmt').on('click', function(e) {
   $.each( $('.ticket'), function(key, ord) {
     orders.rows[orders.rows.length] = $(ord).data().crow;
@@ -54,7 +46,16 @@ $('#sbmt').on('click', function(e) {
   localStorage.setItem('ords', ordsObj);
   getOrders();
   $('.result').html('');
+  alert('successfully reserved');
 });
+
+function showBaySeat() {
+  result = '';
+  $.each($('.seat.bay'), function(key, item) {
+    result += '<div class="ticket" data-crow="' + $(item).data().row  + '" data-cseat="' + $(item).data().seat + '" >Ряд: ' +  $(item).data().row + ' Место:' + $(item).data().seat + '</div>';
+  });
+  $('.result').html(result);
+}
 
 function getOrders() {
   
