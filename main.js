@@ -64,13 +64,11 @@ $('#sbmt').on('click', function(e) {
   localStorage.setItem('count', j); 
 });
 
-function getOrds() {
-  $.each( $('.seat'), function(sts, orded) {
+$.each( $('.seat'), function(sts, orded) {
     var ci = $(orded).data().row;
     var cj = $(orded).data().seat;
     for (i = 0; i < orders.rows.length; i++) {
       if((ci == orders.rows[i]) && (cj == orders.seat[i]))
         $(orded).addClass('orded');
     }
-  });
-}
+});
