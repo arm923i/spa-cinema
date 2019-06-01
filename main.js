@@ -36,10 +36,15 @@ $('.seat').on('click', function(e) {
 });
 
 $('#sbmt').on('click', function(e) {
+  var j = 0;
   $.each( $('.ticket'), function(orders, ord) {
+    orders.rows[j] = $(ord).data().crow;
+    orders.seat[j] = $(ord).data().cseat;
     console.log( $(ord).data().crow );
+    j = j+1;
   });
-
+  var ordsObj = JSON.stringify(orders);
+  localStorage.setItem("ords", ordsObj); 
 });
 
 function showBaySeat() {
