@@ -48,7 +48,16 @@ function showBaySeat() {
 }
 
 $('#sbmt').on('click', function(e) {
+ 
   var j = 0;
+
+  if (!localStorage['count']){ var j = 0;  }
+  else { j = localStorage['count']; }
+ 
+  if (localStorage['ords']){
+    orders = JSON.parse(localStorage.getItem('ords'));
+  }
+
   $.each( $('.ticket'), function(key, ord) {
     orders.rows[j] = $(ord).data().crow;
     orders.seat[j] = $(ord).data().cseat;
@@ -57,5 +66,6 @@ $('#sbmt').on('click', function(e) {
     j = j+1;
   });
   var ordsObj = JSON.stringify(orders);
-  localStorage.setItem('ords', ordsObj); 
+  localStorage.setItem('ords', ordsObj);
+  localStorage.setItem('count', j); 
 });
