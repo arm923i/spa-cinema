@@ -3,9 +3,7 @@ body{
   color: #ffffff;
 }
 .cinemaHall {
-  text-align: center;
   display: inline-block;
-  vertical-align: top;
 }
 .seat {
   height: 35px;
@@ -23,7 +21,6 @@ body{
 }
 .bay {
   background-color: #1e7e34;
-  border: 1px solid;
 }
 .result {
   font-size: 16px;
@@ -41,4 +38,5 @@ body{
 
 .orded{
   background-color: #dc3545;
+  cursor: no-drop;
 }
