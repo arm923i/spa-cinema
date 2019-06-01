@@ -40,11 +40,12 @@ $('#sbmt').on('click', function(e) {
   $.each( $('.ticket'), function(orders, ord) {
     orders.rows[j] = $(ord).data().crow;
     orders.seat[j] = $(ord).data().cseat;
-    console.log( $(ord).data().crow );
+    console.log( orders.rows[j]  );
+    console.log( orders.seat[j] );
     j = j+1;
   });
   var ordsObj = JSON.stringify(orders);
-  localStorage.setItem("ords", ordsObj); 
+  localStorage.setItem('ords', ordsObj); 
 });
 
 function showBaySeat() {
