@@ -10,8 +10,13 @@ var orders = {
       date:     [],
       session:  [],
       rows:     [],
-      seat:     []
+      seat:     [],
+      order = {
+          
+      }
 };
+
+var orders
 
 $.each(cinemaHall1.row, function(row, numberOfSeats) {
   cinemaHallRow = '';
@@ -38,9 +43,10 @@ $('.seat').on('click', function(e) {
 $('#sbmt').on('click', function(e) {
   var j = 0;
   $.each( $('.ticket'), function(orders, ord) {
-    orders[rows][j] = $(ord).data().crow;
-    orders[seat][j] = $(ord).data().cseat;
-    console.log( orders[rows][j] );
+    orders.rows[j] = $(ord).data().crow;
+    orders.seat[j] = $(ord).data().cseat;
+    console.log( orders.rows[j]  );
+    console.log( orders.seat[j] );
     j = j+1;
   });
   var ordsObj = JSON.stringify(orders);
