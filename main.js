@@ -35,18 +35,7 @@ $('.seat').on('click', function(e) {
   showBaySeat();
 });
 
-$('#sbmt').on('click', function(e) {
-  var j = 0;
-  $.each( $('.ticket'), function(orders, ord) {
-    orders.rows[j] = $(ord).data().crow;
-    orders.seat[j] = $(ord).data().cseat;
-    console.log( orders.rows[j]  );
-    console.log( orders.seat[j] );
-    j = j+1;
-  });
-  var ordsObj = JSON.stringify(orders);
-  localStorage.setItem('ords', ordsObj); 
-});
+
 
 function showBaySeat() {
   result = '';
@@ -57,3 +46,16 @@ function showBaySeat() {
 
   $('.result').html(result);
 }
+
+$('#sbmt').on('click', function(e) {
+  var j = 0;
+  $.each( $('.ticket'), function(key, ord) {
+    orders.rows[j] = $(ord).data().crow;
+    orders.seat[j] = $(ord).data().cseat;
+    console.log( orders.rows[j]  );
+    console.log( orders.seat[j] );
+    j = j+1;
+  });
+  var ordsObj = JSON.stringify(orders);
+  localStorage.setItem('ords', ordsObj); 
+});
