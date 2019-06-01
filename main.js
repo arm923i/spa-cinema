@@ -70,6 +70,7 @@ function getOrds() {
     var cj = $(orded).data().seat;
     for (i = 0; i < orders.rows.length; i++) {
       if((ci == orders.rows[i]) && (cj == orders.seat[i]))
-        this.addClass('orded');
-  }
+        $(orded).addClass('orded');
+    }
+  });
 }
