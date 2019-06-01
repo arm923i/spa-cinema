@@ -32,11 +32,25 @@ body{
   max-height: 200px;
   overflow-y: auto;
 }
-.date, .hall, .res{
+.hall, .res{
   border-radius: 20px;
 }
 
 .orded{
   background-color: #dc3545;
   cursor: no-drop;
+}
+
+@media screen and (max-width:375px){
+  .seat{
+    height: 20px;
+    width: 12px;
+    margin-right: 1px;
+  }
+  .hall{
+    padding: 0px!important;
+  }
+  .col-md-10{
+    margin-top: 1rem!important;
+  }
 }
