@@ -22,7 +22,7 @@ body{
   display: block;
 }
 .bay {
-  background-color: #dc3545;
+  background-color: #1e7e34;
   border: 1px solid;
 }
 .result {
@@ -37,4 +37,8 @@ body{
 }
 .date, .hall, .res{
   border-radius: 20px;
+}
+
+.orded{
+  background-color: #dc3545;
 }
