@@ -10,13 +10,8 @@ var orders = {
       date:     [],
       session:  [],
       rows:     [],
-      seat:     [],
-      order = {
-          
-      }
+      seat:     []
 };
-
-var orders
 
 $.each(cinemaHall1.row, function(row, numberOfSeats) {
   cinemaHallRow = '';
