@@ -6,17 +6,24 @@ var cinemaHall1 = {
   cinemaHallMap = '',
   cinemaHallCurrentRow = 1;
 
-var orders = {
-      date:     [],
-      session:  [],
-      rows:     [],
-      seat:     []
-};
+if (!localStorage['count']){ var j = 0; }
+else { var j = localStorage['count']; }
+
+if (localStorage['ords']){ orders = JSON.parse(localStorage.getItem('ords')); }
+else {  
+  var orders = {
+          date:     [],
+          session:  [],
+          rows:     [],
+          seat:     []
+        };
+}
 
 $.each(cinemaHall1.row, function(row, numberOfSeats) {
   cinemaHallRow = '';
   for (i = 1; i <= numberOfSeats; i++) {
     // собираем ряды
+
     cinemaHallRow += '<div class="seat" data-row="' + cinemaHallCurrentRow + '" data-seat="' + i + '">&nbsp;</div>';
   }
   //собираем зал с проходами между рядами
@@ -35,8 +42,6 @@ $('.seat').on('click', function(e) {
   showBaySeat();
 });
 
-
-
 function showBaySeat() {
   result = '';
   //ищем все места купленные и показываем список выкупленных мест
@@ -48,20 +53,9 @@ function showBaySeat() {
 }
 
 $('#sbmt').on('click', function(e) {
- 
-  var j = 0;
-
-  if (!localStorage['count']){ var j = 0;  }
-  else { j = localStorage['count']; }
- 
-  if (localStorage['ords']){
-    orders = JSON.parse(localStorage.getItem('ords'));
-  }
-
   $.each( $('.ticket'), function(key, ord) {
     orders.rows[j] = $(ord).data().crow;
     orders.seat[j] = $(ord).data().cseat;
-    console.log( orders.rows[j]  );
     console.log( orders.seat[j] );
     j = j+1;
   });
@@ -69,3 +63,13 @@ $('#sbmt').on('click', function(e) {
   localStorage.setItem('ords', ordsObj);
   localStorage.setItem('count', j); 
 });
+
+function getOrds() {
+  $.each( $('.seat'), function(sts, orded) {
+    var ci = $(orded).data().row;
+    var cj = $(orded).data().seat;
+    for (i = 0; i < orders.rows.length; i++) {
+      if((ci == orders.rows[i]) && (cj == orders.seat[i]))
+        this.addClass('orded');
+  }
+}
