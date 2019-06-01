@@ -21,13 +21,19 @@ $.each(cinemaHall1.row, function(row, numberOfSeats) {
   }
   cinemaHallMap += cinemaHallRow + '<div class="passageBetween">&nbsp;</div>';
   cinemaHallCurrentRow = cinemaHallCurrentRow + 1;
+  
 });
 
 $('.zal1').html(cinemaHallMap);
+getOrders();
 
 $('.seat').on('click', function(e) {
-  $(e.currentTarget).toggleClass('bay');
-   showBaySeat();
+  if ( $(e.currentTarget).hasClass("orded") ) {
+    alert('place is taken');
+  }else {
+    $(e.currentTarget).toggleClass('bay');
+    showBaySeat();
+  }
 });
 
 function showBaySeat() {
@@ -46,13 +52,20 @@ $('#sbmt').on('click', function(e) {
   });
   var ordsObj = JSON.stringify(orders);
   localStorage.setItem('ords', ordsObj);
+  getOrders();
+  $('.result').html('');
 });
 
-$.each( $('.seat'), function(sts, orded) {
-    var ci = $(orded).data().row;
-    var cj = $(orded).data().seat;
-    for (i = 0; i < orders.rows.length; i++) {
-      if((ci == orders.rows[i]) && (cj == orders.seat[i]))
-        $(orded).addClass('orded');
-    }
-});
+function getOrders() {
+  
+  $.each( $('.seat'), function(sts, orded) {
+      var ci = $(orded).data().row;
+      var cj = $(orded).data().seat;
+      for (i = 0; i < orders.rows.length; i++) {
+        if((ci == orders.rows[i]) && (cj == orders.seat[i]))
+          $(orded).addClass('orded');
+          if ( $(orded).hasClass("bay") ) $(orded).removeClass("bay");
+      }
+  });
+
+}
