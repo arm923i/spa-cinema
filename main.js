@@ -38,10 +38,10 @@ $('.seat').on('click', function(e) {
 $('#sbmt').on('click', function(e) {
   var j = 0;
   $.each( $('.ticket'), function(orders, ord) {
-    orders.rows[j] = $(ord).data().crow;
-    orders.seat[j] = $(ord).data().cseat;
-    console.log( orders.rows[j]  );
-    console.log( orders.seat[j] );
+    orders.rows.push($(ord).data().crow);
+    orders.seat.push($(ord).data().cseat);
+    console.log( orders.rows );
+    console.log( orders.seat);
     j = j+1;
   });
   var ordsObj = JSON.stringify(orders);
