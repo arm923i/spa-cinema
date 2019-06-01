@@ -42,7 +42,7 @@ $('#sbmt').on('click', function(e) {
   $.each( $('.ticket'), function(key, ord) {
     orders.rows[orders.rows.length] = $(ord).data().crow;
     orders.seat[orders.seat.length] = $(ord).data().cseat;
-    console.log( orders.seat[j] );
+    console.log('+');
   });
   var ordsObj = JSON.stringify(orders);
   localStorage.setItem('ords', ordsObj);
