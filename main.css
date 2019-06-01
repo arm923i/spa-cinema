@@ -26,11 +26,10 @@ body{
   font-size: 16px;
   display: inline-block;
   margin-right: 5px;
-}
-.res {
   max-height: 200px;
   overflow-y: auto;
 }
+
 .hall, .res{
   border-radius: 20px;
 }
