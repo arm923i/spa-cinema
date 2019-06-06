@@ -6,6 +6,9 @@ body{
   display: inline-block;
 
 }
+hr{
+    border-top: 1px solid rgba(255, 255, 255, 0.40)!important;
+}
 .rw{
 	font-weight:700;
 	padding: 5px 15px 0 0;
