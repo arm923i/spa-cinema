@@ -16,6 +16,7 @@ else {
 
 $.each(cinemaHall1.row, function(row, numberOfSeats) {
   cinemaHallRow = '';
+   cinemaHallRow += '<span class="rw">' + cinemaHallCurrentRow + '</span>';
   for (i = 1; i <= numberOfSeats; i++) {
     cinemaHallRow += '<div class="seat" data-row="' + cinemaHallCurrentRow + '" data-seat="' + i + '">' + i + '</div>';
   }
