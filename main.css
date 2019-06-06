@@ -16,10 +16,10 @@ hr{
 .seat {
 	color: #6c757d;
 	font-weight: 700;
-	padding-top: 10px;
-	height: 45px;
-	width: 45px;
-	font-size: 18px;
+	padding-top: 8px;
+	height: 35px;
+	width: 35px;
+	font-size: 14px;
   margin-right: 5px;
   background-color: #ffffff;
   display: inline-block;
