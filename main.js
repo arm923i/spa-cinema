@@ -1,5 +1,5 @@
 var cinemaHall1 = {
-    row: [16, 18, 20, 20, 20, 20]
+    row: [25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25]
   },
   cinemaHallMap = '',
   cinemaHallCurrentRow = 1;
