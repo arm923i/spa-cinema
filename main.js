@@ -17,7 +17,7 @@ else {
 $.each(cinemaHall1.row, function(row, numberOfSeats) {
   cinemaHallRow = '';
   for (i = 1; i <= numberOfSeats; i++) {
-    cinemaHallRow += '<div class="seat" data-row="' + cinemaHallCurrentRow + '" data-seat="' + i + '">&nbsp;</div>';
+    cinemaHallRow += '<div class="seat" data-row="' + cinemaHallCurrentRow + '" data-seat="' + i + '">' + i + '</div>';
   }
   cinemaHallMap += cinemaHallRow + '<div class="passageBetween">&nbsp;</div>';
   cinemaHallCurrentRow = cinemaHallCurrentRow + 1;
