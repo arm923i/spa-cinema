@@ -53,7 +53,7 @@ $('#sbmt').on('click', function(e) {
 function showBaySeat() {
   result = '';
   $.each($('.seat.bay'), function(key, item) {
-    result += '<div class="ticket" data-crow="' + $(item).data().row  + '" data-cseat="' + $(item).data().seat + '" >Ряд: ' +  $(item).data().row + ' | Место: ' + $(item).data().seat + '</div>';
+    result += '<div class="ticket" data-crow="' + $(item).data().row  + '" data-cseat="' + $(item).data().seat + '" >Ряд: ' +  $(item).data().row + ' | Место: ' + $(item).data().seat + '</div> <hr>';
   });
   $('.result').html(result);
 }
